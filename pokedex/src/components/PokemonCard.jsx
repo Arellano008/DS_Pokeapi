@@ -1,5 +1,3 @@
-import React from 'react'
-
 export const PokemonCard = ({ pokemon }) => {
   if (!pokemon) return null
 

@@ -1,0 +1,91 @@
+h1 {
+  text-align: center;
+  color: var(--text-h);
+}
+
+/* Fila: botón, vecino, principal, vecino, botón */
+.visor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.principal {
+  min-width: 260px;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Los vecinos se ven más chicos y apagados */
+.vecino {
+  width: 180px;
+  opacity: 0.5;
+  transform: scale(0.75);
+}
+
+.tarjeta {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  background: var(--code-bg);
+  box-shadow: var(--shadow);
+}
+
+.tarjeta img {
+  max-width: 100%;
+  height: auto;
+}
+
+.tarjeta h2 {
+  color: var(--text-h);
+  text-transform: capitalize;
+  margin: 8px 0;
+}
+
+.tipos {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.tipos li {
+  padding: 2px 12px;
+  border-radius: 999px;
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  color: var(--accent);
+  text-transform: capitalize;
+}
+
+.boton-nav {
+  font: inherit;
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--accent-border);
+  background: var(--accent-bg);
+  color: var(--accent);
+  cursor: pointer;
+}
+
+.boton-nav:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.error {
+  color: #e5484d;
+}
+
+/* En pantallas chicas se ocultan los vecinos */
+@media (max-width: 800px) {
+  .vecino {
+    display: none;
+  }
+}
