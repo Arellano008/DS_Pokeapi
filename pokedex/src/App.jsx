@@ -6,7 +6,7 @@ const API = "https://pokeapi.co/api/v2"
 const PRIMER_ID = 1
 const ULTIMO_ID = 1025
 
-// Pide un Pokémon vecino; si está fuera de rango o falla, regresa null
+ 
 async function cargarVecino(n) {
   if (n < PRIMER_ID || n > ULTIMO_ID) return null
   try {
