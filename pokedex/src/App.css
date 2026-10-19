@@ -1,30 +1,59 @@
-h1 {
+h1,
+h2 {
   text-align: center;
   color: var(--text-h);
 }
 
-/* Fila: botón, vecino, principal, vecino, botón */
-.visor {
+/* Botones generales */
+button {
+  font: inherit;
+  padding: 6px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--accent-border);
+  background: var(--accent-bg);
+  color: var(--accent);
+  cursor: pointer;
+}
+
+button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Buscador */
+.buscador {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 8px;
   padding: 16px;
 }
 
-.principal {
-  min-width: 260px;
-  min-height: 360px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.buscador input {
+  font: inherit;
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  width: min(320px, 100%);
 }
 
-/* Los vecinos se ven más chicos y apagados */
-.vecino {
-  width: 180px;
-  opacity: 0.5;
-  transform: scale(0.75);
+/* Paginación */
+.paginas {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 16px;
+}
+
+/* Lista de 25 */
+.lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 16px;
 }
 
 .tarjeta {
@@ -36,15 +65,20 @@ h1 {
   box-shadow: var(--shadow);
 }
 
+/* Marca de los que ya están en el equipo */
+.tarjeta.en-equipo {
+  border: 2px solid var(--accent);
+}
+
 .tarjeta img {
   max-width: 100%;
   height: auto;
 }
 
 .tarjeta h2 {
-  color: var(--text-h);
   text-transform: capitalize;
   margin: 8px 0;
+  font-size: 1.1rem;
 }
 
 .tipos {
@@ -64,28 +98,28 @@ h1 {
   text-transform: capitalize;
 }
 
-.boton-nav {
-  font: inherit;
-  padding: 8px 14px;
-  border-radius: 8px;
-  border: 1px solid var(--accent-border);
-  background: var(--accent-bg);
-  color: var(--accent);
-  cursor: pointer;
+/* Equipo */
+.equipo {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0 16px 16px;
 }
 
-.boton-nav:disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
+.miembro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 12px;
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  background: var(--code-bg);
+  text-transform: capitalize;
 }
 
 .error {
   color: #e5484d;
-}
-
-/* En pantallas chicas se ocultan los vecinos */
-@media (max-width: 800px) {
-  .vecino {
-    display: none;
-  }
+  text-align: center;
 }
