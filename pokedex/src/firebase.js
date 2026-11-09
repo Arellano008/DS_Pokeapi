@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app"
 import { getFirestore } from "firebase/firestore"
-
+import { getAuth } from "firebase/auth"
 // Las credenciales se leen del archivo .env (Vite solo expone las que empiezan con VITE_)
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FB_API_KEY,
@@ -15,3 +15,5 @@ const app = initializeApp(firebaseConfig)
 
 // Conexión a Firestore; la usaremos para guardar el equipo
 export const db = getFirestore(app)
+
+export const auth = getAuth(app)
